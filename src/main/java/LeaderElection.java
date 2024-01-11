@@ -8,13 +8,14 @@ import java.util.List;
 
 public class LeaderElection implements Watcher {
 
-    private static final String PHYSICAL_ZNODES_PATH = "/physical_nodes";
+    private static final String ELECTION_NAMESPACE = "/election";
     private String currentZnodeName;
     private ZooKeeper zooKeeper;
 
     private OnElectionCallback onElectionCallback;
 
-    public LeaderElection(ZooKeeper zooKeeper, OnElectionCallback onElectionCallback) {
+    public LeaderElection(ZooKeeper zooKeeper, OnElectionCallback onElectionCallback)
+    {
         this.zooKeeper = zooKeeper;
         this.onElectionCallback = onElectionCallback;
 
@@ -22,13 +23,13 @@ public class LeaderElection implements Watcher {
 
     public void volunteerForLeadership() throws InterruptedException, KeeperException, UnknownHostException {
 
-        String znodePrefix = PHYSICAL_ZNODES_PATH + "/node_";
+        String znodePrefix = ELECTION_NAMESPACE + "/node_";
         String IP = InetAddress.getLocalHost().getHostAddress();
         String username = System.getProperty("user.name")+"@"+IP;
         String znodeFullPath = zooKeeper.create(znodePrefix, username.getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);
 
         System.out.println(znodeFullPath);
-        this.currentZnodeName = znodeFullPath.replace(PHYSICAL_ZNODES_PATH + "/", "");
+        this.currentZnodeName = znodeFullPath.replace(ELECTION_NAMESPACE + "/", "");
     }
 
     public void reelectLeader() throws InterruptedException, KeeperException {
@@ -38,7 +39,7 @@ public class LeaderElection implements Watcher {
         //this while to guarantee get predecessor even if it deleted just before zookeeper.exist
         while (predecessorStat == null)
         {
-            List<String> children = zooKeeper.getChildren(PHYSICAL_ZNODES_PATH, false);
+            List<String> children = zooKeeper.getChildren(ELECTION_NAMESPACE, false);
             Collections.sort(children);
 
             String smallestChild = children.get(0); //the first element
@@ -51,7 +52,7 @@ public class LeaderElection implements Watcher {
                 System.out.println("I'm not a leader");
                 int predecessorIndex = children.indexOf(currentZnodeName) - 1;
                 predecessorName = children.get(predecessorIndex);
-                predecessorStat = zooKeeper.exists(PHYSICAL_ZNODES_PATH + "/" + predecessorName, this);
+                predecessorStat = zooKeeper.exists(ELECTION_NAMESPACE + "/" + predecessorName, this);
             }
         }
         onElectionCallback.onWorker();

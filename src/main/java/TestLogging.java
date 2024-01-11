@@ -3,6 +3,8 @@ import ch.qos.logback.core.FileAppender;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
+
 public class TestLogging {
     private static final Logger logger = LoggerFactory.getLogger(TestLogging.class);
 
@@ -22,13 +24,23 @@ public class TestLogging {
         logger.error("Error log message");
     }
 
-    public static void main(String[] args) {
-        //tryLogging();
-        //changeLogFile("logs/MyClassLogs.logs");
-       // someMethod();
-        String workingDir = System.getProperty("user.dir");
-        System.out.println("Current working directory: " + workingDir);
-        /// out put :  D:\HIAST\FIY\FS\Distributed Systems\Lab\6\DS-06\Registration&Discovery-AutoHealer
-        /// out/artifacts/TransientWorker_jar/Registration&Discovery-AutoHealer.jar
+    public static void main(String[] args) throws InterruptedException, IOException {
+/*
+         String remoteDirectory = "/JavaJars/";
+
+         String pathToProgram  = System.getProperty("user.dir") + RELATIVE_PATH_TO_JARS + pathToFile;
+         String remoteJarFilePath = remoteDirectory + file.getName();
+
+         String scpCommand = "scp " + pathToProgram + " " + remoteUser + ":" + remoteDirectory;
+
+         String sshCommand = "ssh " + remoteUser +
+         " 'java -Dorg.slf4j.simpleLogger.defaultLogLevel=off -jar " +
+         remoteJarFilePath + " ' ";
+
+         Process scpProcess = Runtime.getRuntime().exec(scpCommand);
+         scpProcess.waitFor();
+         if (scpProcess.exitValue() == 0) {
+         Process sshProcess = Runtime.getRuntime().exec(sshCommand);
+         }*/
     }
 }

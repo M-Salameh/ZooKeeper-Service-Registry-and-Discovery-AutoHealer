@@ -44,16 +44,13 @@ public class ServiceRegistry implements Watcher
     }
 
     public void registerToCluster(String metadata) throws KeeperException, InterruptedException {
-        System.out.println(metadata);
-        if (this.currentZnode != null)
-        {
-            zooKeeper.setData(PHYSICAL_ZNODES_PATH + "/"+currentZnode , metadata.getBytes() , -1);
+
+        if (this.currentZnode != null) {
             System.out.println("Already registered to service registry");
             return;
         }
         this.currentZnode = zooKeeper.create(PHYSICAL_ZNODES_PATH + "/node_", metadata.getBytes(),
                 ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);
-
         System.out.println("Registered to service registry");
     }
 
@@ -109,34 +106,56 @@ public class ServiceRegistry implements Watcher
     }
 
     private void launchWorkersIfNecessary() throws KeeperException, InterruptedException, IOException {
-        List<String> physicalZnodes = zooKeeper.getChildren(PHYSICAL_ZNODES_PATH, false);
-        List<String> workers = zooKeeper.getChildren(WORKERS_ZNODES_PATH , this);
-        int neededInstances = numberOfInstances - workers.size();
-
-        int index= 0;
-
-        int code = 1;
-
-
-        List<String> sortedWorkers = NodeSorting.sort(getOriginalNodes(workers) , physicalZnodes);
-
-        while (neededInstances > 0 && sortedWorkers.size()>0)
+        synchronized (zooKeeper)
         {
-            Stat stat = zooKeeper.exists(PHYSICAL_ZNODES_PATH+"/"+sortedWorkers.get(index) ,false);
-            if (stat == null)
-            {
-                code++;
-                if (code > sortedWorkers.size())
-                {
-                    break;
+            List<String> physicalZnodes = zooKeeper.getChildren(PHYSICAL_ZNODES_PATH, false);
+            List<String> workers = zooKeeper.getChildren(WORKERS_ZNODES_PATH, this);
+            for (String worker : workers) {
+                Stat stat = zooKeeper.exists(WORKERS_ZNODES_PATH + "/" + worker, false);
+                if (stat == null) {
+                    workers.remove(worker);
+                    continue;
                 }
-                continue;
-            }
-            startNewWorker(sortedWorkers.get(index));
-            neededInstances--;
-            index = (index+1)%sortedWorkers.size();
-        }
 
+                String node = new String(zooKeeper.getData(WORKERS_ZNODES_PATH + "/" + worker, false, stat));
+                if (physicalZnodes.contains(node)) {
+                    System.out.println("NODE ALREADY EXIST");
+                    continue;
+                }
+                workers.remove(worker);
+            }
+
+            int neededInstances = numberOfInstances - workers.size();
+
+            System.out.println("Needed Instances is : " + neededInstances);
+
+            int index = 0;
+
+            int code = 1;
+
+
+            List<String> sortedWorkers = NodeSorting.sort(getOriginalNodes(workers), physicalZnodes);
+
+            while (neededInstances > 0 && sortedWorkers.size() > 0)
+            {
+                Stat stat = zooKeeper.exists(PHYSICAL_ZNODES_PATH + "/" + sortedWorkers.get(index), false);
+                if (stat == null) {
+                    code++;
+                    if (code > sortedWorkers.size()) {
+                        break;
+                    }
+                    continue;
+                }
+
+                System.out.println("I am In the While !!" + " Turn for " + sortedWorkers.get(index));
+                startNewWorker(sortedWorkers.get(index));
+
+                neededInstances--;
+
+                index = (index + 1) % sortedWorkers.size();
+            }
+
+        }
     }
 
     private List<byte[]> getOriginalNodes(List<String> workers) throws InterruptedException, KeeperException {
@@ -156,7 +175,7 @@ public class ServiceRegistry implements Watcher
 
         String remoteUser = new String(zooKeeper.getData(PHYSICAL_ZNODES_PATH+"/"+physicalNode , false, null));
 
-        String remoteDirectory = "/JavaJars/";
+        /**String remoteDirectory = "/JavaJars/";
 
         String remoteJarFilePath = remoteDirectory + file.getName();
 
@@ -171,13 +190,11 @@ public class ServiceRegistry implements Watcher
         scpProcess.waitFor();
         if (scpProcess.exitValue() == 0) {
             Process sshProcess = Runtime.getRuntime().exec(sshCommand);
-        }
+        }*/
+         String command = "java -Dorg.slf4j.simpleLogger.defaultLogLevel=off -jar " + file.getName() + " " + physicalNode;
+         System.out.println("Sending job to " + remoteUser + " of node : " + physicalNode);
+         Runtime.getRuntime().exec(command, null, file.getParentFile());
 
-        /**
-         *String command = "java -Dorg.slf4j.simpleLogger.defaultLogLevel=off -jar " + file.getName() + " " + physicalNode;
-         * System.out.println("Sendig job to " + ip + " of node : " + physicalNode);
-         * Runtime.getRuntime().exec(command, null, file.getParentFile());
-         */
     }
 
     @Override

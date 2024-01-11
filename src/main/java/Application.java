@@ -26,7 +26,7 @@ public class Application implements Watcher {
     public static void main(String[] args) throws IOException, InterruptedException, KeeperException {
 
         int currentServerPort = args.length == 3 ? Integer.parseInt(args[0]) : DEFAULT_PORT;
-        numberOfInstances = args.length == 3 ? Integer.parseInt(args[1]) : 10;
+        numberOfInstances = args.length == 3 ? Integer.parseInt(args[1]) : 4;
 
         pathToFile = args.length == 3 ? args[2] : "TransientWorker_jar/Registration&Discovery-AutoHealer.jar";
         pathToFile = System.getProperty("user.dir") + RELATIVE_PATH_TO_JARS + pathToFile;
@@ -39,7 +39,7 @@ public class Application implements Watcher {
         OnElectionAction onElectionAction = new OnElectionAction(serviceRegistry, currentServerPort);
 
         LeaderElection leaderElection = new LeaderElection(zooKeeper, onElectionAction);
-        leaderElection.volunteerForLeadership();
+        String ss = leaderElection.volunteerForLeadership();
         leaderElection.reelectLeader();
 
         application.run();

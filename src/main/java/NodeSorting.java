@@ -25,7 +25,7 @@ public class NodeSorting
         for (String node : Nodes)
         {
             int x = map.getOrDefault(node , 0);
-            map.put(node , x+1);
+            map.put(node , x);
         }
         List<Pair> temp  = new ArrayList<>();
         for (Map.Entry<String , Integer> el : map.entrySet())
@@ -48,7 +48,7 @@ public class NodeSorting
         {
             ans.add(pair.node);
         }
-
+        //System.out.println(ans);
         return ans;
     }
 }
