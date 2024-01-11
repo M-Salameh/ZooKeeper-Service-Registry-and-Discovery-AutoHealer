@@ -8,7 +8,7 @@ import java.util.List;
 
 public class LeaderElection implements Watcher {
 
-    private static final String AUTOHEALER_ZNODES_PATH = "/physical_nodes";
+    private static final String PHYSICAL_ZNODES_PATH = "/physical_nodes";
     private String currentZnodeName;
     private ZooKeeper zooKeeper;
 
@@ -20,12 +20,15 @@ public class LeaderElection implements Watcher {
 
     }
 
-    public void volunteerForLeadership() throws InterruptedException, KeeperException {
-        String znodePrefix = AUTOHEALER_ZNODES_PATH + "/node_";
-        String znodeFullPath = zooKeeper.create(znodePrefix, new byte[]{}, ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);
+    public void volunteerForLeadership() throws InterruptedException, KeeperException, UnknownHostException {
+
+        String znodePrefix = PHYSICAL_ZNODES_PATH + "/node_";
+        String IP = InetAddress.getLocalHost().getHostAddress();
+        String username = System.getProperty("user.name")+"@"+IP;
+        String znodeFullPath = zooKeeper.create(znodePrefix, username.getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);
 
         System.out.println(znodeFullPath);
-        this.currentZnodeName = znodeFullPath.replace(AUTOHEALER_ZNODES_PATH + "/", "");
+        this.currentZnodeName = znodeFullPath.replace(PHYSICAL_ZNODES_PATH + "/", "");
     }
 
     public void reelectLeader() throws InterruptedException, KeeperException {
@@ -35,20 +38,12 @@ public class LeaderElection implements Watcher {
         //this while to guarantee get predecessor even if it deleted just before zookeeper.exist
         while (predecessorStat == null)
         {
-            List<String> children = zooKeeper.getChildren(AUTOHEALER_ZNODES_PATH, false);
+            List<String> children = zooKeeper.getChildren(PHYSICAL_ZNODES_PATH, false);
             Collections.sort(children);
 
             String smallestChild = children.get(0); //the first element
             if (smallestChild.equals(currentZnodeName)) {
                 System.out.println("I'm a leader");
-                try
-                {
-                    String IP = InetAddress.getLocalHost().getHostAddress();
-                    String username = System.getProperty("user.name")+"@"+IP;
-                    zooKeeper.setData(AUTOHEALER_ZNODES_PATH + "/"+currentZnodeName , username.getBytes() , -1);
-                } catch (UnknownHostException e) {
-                    throw new RuntimeException(e);
-                }
                 onElectionCallback.onElectedToBeLeader();
                 return;
             }
@@ -56,7 +51,7 @@ public class LeaderElection implements Watcher {
                 System.out.println("I'm not a leader");
                 int predecessorIndex = children.indexOf(currentZnodeName) - 1;
                 predecessorName = children.get(predecessorIndex);
-                predecessorStat = zooKeeper.exists(AUTOHEALER_ZNODES_PATH + "/" + predecessorName, this);
+                predecessorStat = zooKeeper.exists(PHYSICAL_ZNODES_PATH + "/" + predecessorName, this);
             }
         }
         onElectionCallback.onWorker();

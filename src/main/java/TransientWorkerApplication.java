@@ -17,7 +17,7 @@ public class TransientWorkerApplication
             worker.work(nodeNum);
         }
         catch (Exception e) {
-
+            System.exit(1);
         }
     }
 }

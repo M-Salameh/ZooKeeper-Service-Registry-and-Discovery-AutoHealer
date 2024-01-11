@@ -17,12 +17,19 @@ public class Application implements Watcher {
 
     public static int numberOfInstances;
     public static String pathToFile = "";
+    private static final String RELATIVE_PATH_TO_JARS = "/out/artifacts/";
 
+    /**
+     * input for jars to execute must be their relative paths
+     * inside the out/artifact/ directory
+     * */
     public static void main(String[] args) throws IOException, InterruptedException, KeeperException {
 
         int currentServerPort = args.length == 3 ? Integer.parseInt(args[0]) : DEFAULT_PORT;
-        numberOfInstances = args.length == 3 ? Integer.parseInt(args[1]) : 100;
-        pathToFile = args.length == 3 ? args[2] : "D:\\HIAST\\FIY\\FS\\Distributed Systems\\Lab\\6\\DS-06\\Registration&Discovery-AutoHealer\\out\\artifacts\\TransientWorker_jar\\Registration&Discovery-AutoHealer.jar";
+        numberOfInstances = args.length == 3 ? Integer.parseInt(args[1]) : 10;
+
+        pathToFile = args.length == 3 ? args[2] : "TransientWorker_jar/Registration&Discovery-AutoHealer.jar";
+        pathToFile = System.getProperty("user.dir") + RELATIVE_PATH_TO_JARS + pathToFile;
 
         Application application = new Application();
         ZooKeeper zooKeeper = application.connectToZookeeper();
