@@ -23,7 +23,7 @@ public class LeaderElection implements Watcher {
 
     public void volunteerForLeadership() throws InterruptedException, KeeperException, UnknownHostException {
 
-        String znodePrefix = ELECTION_NAMESPACE + "/node_";
+        String znodePrefix = ELECTION_NAMESPACE + "/c_";
         String IP = InetAddress.getLocalHost().getHostAddress();
         String username = System.getProperty("user.name")+"@"+IP;
         String znodeFullPath = zooKeeper.create(znodePrefix, username.getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);
@@ -45,6 +45,7 @@ public class LeaderElection implements Watcher {
             String smallestChild = children.get(0); //the first element
             if (smallestChild.equals(currentZnodeName)) {
                 System.out.println("I'm a leader");
+
                 onElectionCallback.onElectedToBeLeader();
                 return;
             }

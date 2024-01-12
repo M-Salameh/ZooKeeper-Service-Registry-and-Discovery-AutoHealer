@@ -49,7 +49,7 @@ public class ServiceRegistry implements Watcher
             System.out.println("Already registered to service registry");
             return;
         }
-        this.currentZnode = zooKeeper.create(PHYSICAL_ZNODES_PATH + "/node_", metadata.getBytes(),
+        this.currentZnode = zooKeeper.create(PHYSICAL_ZNODES_PATH + "/physical_node_", metadata.getBytes(),
                 ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);
         System.out.println("Registered to service registry");
     }
@@ -78,14 +78,14 @@ public class ServiceRegistry implements Watcher
         }
     }
 
-    private void masterJob() throws InterruptedException, KeeperException, IOException {
+    private synchronized void masterJob() throws InterruptedException, KeeperException, IOException {
         updateAddresses();
         launchWorkersIfNecessary();
     }
 
-    private synchronized void updateAddresses() throws KeeperException, InterruptedException
+    private void updateAddresses() throws KeeperException, InterruptedException
     {
-        List<String> workerZnodes = zooKeeper.getChildren(PHYSICAL_ZNODES_PATH, this);
+        List<String> workerZnodes = zooKeeper.getChildren(PHYSICAL_ZNODES_PATH, false);
 
         List<String> addresses = new ArrayList<>(workerZnodes.size());
 
@@ -105,57 +105,66 @@ public class ServiceRegistry implements Watcher
         System.out.println("The cluster addresses are: " + this.allServiceAddresses);
     }
 
-    private void launchWorkersIfNecessary() throws KeeperException, InterruptedException, IOException {
-        synchronized (zooKeeper)
-        {
-            List<String> physicalZnodes = zooKeeper.getChildren(PHYSICAL_ZNODES_PATH, false);
-            List<String> workers = zooKeeper.getChildren(WORKERS_ZNODES_PATH, this);
-            for (String worker : workers) {
-                Stat stat = zooKeeper.exists(WORKERS_ZNODES_PATH + "/" + worker, false);
-                if (stat == null) {
-                    workers.remove(worker);
-                    continue;
-                }
+    private void launchWorkersIfNecessary() throws KeeperException, InterruptedException, IOException
+    {
+        List<String> physicalZnodes = zooKeeper.getChildren(PHYSICAL_ZNODES_PATH, this);
 
-                String node = new String(zooKeeper.getData(WORKERS_ZNODES_PATH + "/" + worker, false, stat));
-                if (physicalZnodes.contains(node)) {
-                    System.out.println("NODE ALREADY EXIST");
-                    continue;
-                }
+        List<String> workers = zooKeeper.getChildren(WORKERS_ZNODES_PATH, this);
+
+        //System.out.println("Total workers (before editing) = " + workers.size());
+
+        for (String worker : workers)
+        {
+            Stat stat = zooKeeper.exists(WORKERS_ZNODES_PATH + "/" + worker, false);
+            if (stat == null) {
+                workers.remove(worker);
+                continue;
+            }
+
+            String node = new String(zooKeeper.getData(WORKERS_ZNODES_PATH + "/" + worker, false, stat));
+            if (!physicalZnodes.contains(node))
+            {
+                //System.out.println("Physical Node is shut down !!");
                 workers.remove(worker);
             }
-
-            int neededInstances = numberOfInstances - workers.size();
-
-            System.out.println("Needed Instances is : " + neededInstances);
-
-            int index = 0;
-
-            int code = 1;
-
-
-            List<String> sortedWorkers = NodeSorting.sort(getOriginalNodes(workers), physicalZnodes);
-
-            while (neededInstances > 0 && sortedWorkers.size() > 0)
-            {
-                Stat stat = zooKeeper.exists(PHYSICAL_ZNODES_PATH + "/" + sortedWorkers.get(index), false);
-                if (stat == null) {
-                    code++;
-                    if (code > sortedWorkers.size()) {
-                        break;
-                    }
-                    continue;
-                }
-
-                System.out.println("I am In the While !!" + " Turn for " + sortedWorkers.get(index));
-                startNewWorker(sortedWorkers.get(index));
-
-                neededInstances--;
-
-                index = (index + 1) % sortedWorkers.size();
-            }
-
         }
+
+        List<String> sortedWorkers = NodeSorting.sort(getOriginalNodes(workers), physicalZnodes);
+
+        while (workers.size() > numberOfInstances)
+        {
+            Stat stat = zooKeeper.exists(WORKERS_ZNODES_PATH + "/" + workers.get(0), false);
+            if (stat == null) {
+                workers.remove(0);
+                continue;
+            }
+            zooKeeper.delete(WORKERS_ZNODES_PATH + "/" + workers.get(0) , -1);
+        }
+
+        int neededInstances = numberOfInstances - workers.size();
+
+        if (neededInstances <= 0) return;
+
+        System.out.println("Needed Instances is : " + neededInstances);
+
+        int index = 0;
+
+        int size = sortedWorkers.size();
+        while (neededInstances>0
+                && size>0)
+        {
+            Stat stat = zooKeeper.exists(PHYSICAL_ZNODES_PATH + "/" + sortedWorkers.get(index), false);
+            if (stat == null)
+            {
+                sortedWorkers.remove(index);
+                size--;
+                continue;
+            }
+            startNewWorker(sortedWorkers.get(index));
+            neededInstances--;
+            index = (index + 1) % size;
+        }
+
     }
 
     private List<byte[]> getOriginalNodes(List<String> workers) throws InterruptedException, KeeperException {
@@ -165,6 +174,8 @@ public class ServiceRegistry implements Watcher
             Stat stat = zooKeeper.exists(WORKERS_ZNODES_PATH+"/"+worker ,false);
             if (stat == null) continue;
             ans.add(zooKeeper.getData(WORKERS_ZNODES_PATH+"/"+worker,false,stat ));
+           // String jj = new String(ans.get(ans.size()-1));
+           // System.out.println("worker : " +worker + " belongs to : " + jj);
         }
         return ans;
     }
@@ -200,10 +211,19 @@ public class ServiceRegistry implements Watcher
     @Override
     public void process(WatchedEvent watchedEvent)
     {
-        try {
-            masterJob();
-        } catch (InterruptedException | KeeperException | IOException e) {
-            throw new RuntimeException(e);
+        switch (watchedEvent.getType())
+        {
+            case NodeChildrenChanged:
+            {
+                try
+                {
+                    masterJob();
+                }
+                catch (InterruptedException | KeeperException | IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
         }
     }
 

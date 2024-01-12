@@ -29,7 +29,11 @@ public class TransientWorker
 
     public void work(String nodeNum) throws KeeperException, InterruptedException {
         addChildZnode(nodeNum);
-        while (true)
+        System.out.println(myName + " is Working...");
+        Thread.sleep(20000);
+        System.out.println(myName + " encountered Critical error happened");
+        throw new RuntimeException(myName + " : Oops");
+        /*while (true)
         {
             System.out.println(myName + " is Working...");
             LockSupport.parkNanos(1000L);
@@ -37,7 +41,7 @@ public class TransientWorker
                 System.out.println(myName + " encountered Critical error happened");
                 throw new RuntimeException(myName + " : Oops");
             }
-        }
+        }*/
     }
 
     private void addChildZnode(String nodeNumber) throws KeeperException, InterruptedException {

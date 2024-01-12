@@ -12,13 +12,22 @@ public class NodeSorting
             this.node = x;
             this.tasksNo = y;
         }
+        @Override
+        public String toString()
+        {
+            return "node : " + this.node +" has : " + tasksNo + " workers !!";
+        }
     }
     public static List<String> sort(List<byte[]> workers , List<String> Nodes)
     {
         Map<String , Integer> map = new HashMap<>();
+        System.out.println("physical nodes are : " + Nodes);
+        System.out.println("jars running are : " + workers.size());
+
         for (byte[] worker : workers)
         {
             String s = new String(worker);
+            if (!Nodes.contains(s)) continue;
             int x = map.getOrDefault(s , 0);
             map.put(s , x+1);
         }
@@ -43,7 +52,7 @@ public class NodeSorting
         };
         List<String> ans = new ArrayList<>();
         Collections.sort(temp, comparator);
-
+        System.out.println(temp);
         for (Pair pair : temp)
         {
             ans.add(pair.node);

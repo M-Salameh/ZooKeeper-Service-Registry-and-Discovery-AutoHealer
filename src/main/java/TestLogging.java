@@ -3,6 +3,7 @@ import ch.qos.logback.core.FileAppender;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
 import java.io.IOException;
 
 public class TestLogging {
@@ -25,9 +26,14 @@ public class TestLogging {
     }
 
     public static void main(String[] args) throws InterruptedException, IOException {
-/*
+
          String remoteDirectory = "/JavaJars/";
 
+        String RELATIVE_PATH_TO_JARS = "/out/artifacts/";
+        String pathToFile = args.length == 3 ? args[2] : "TransientWorker_jar/Registration&Discovery-AutoHealer.jar";
+        pathToFile = System.getProperty("user.dir") + RELATIVE_PATH_TO_JARS + pathToFile;
+        File file = new File(pathToFile);
+        String remoteUser = "root@192.168.184.10";
          String pathToProgram  = System.getProperty("user.dir") + RELATIVE_PATH_TO_JARS + pathToFile;
          String remoteJarFilePath = remoteDirectory + file.getName();
 
@@ -41,6 +47,6 @@ public class TestLogging {
          scpProcess.waitFor();
          if (scpProcess.exitValue() == 0) {
          Process sshProcess = Runtime.getRuntime().exec(sshCommand);
-         }*/
+         }
     }
 }
