@@ -1,0 +1,261 @@
+2024-01-18 12:15:00,812 INFO AutoHealerAndLoadBalancing.Application [main-EventThread] Successfully connected to Zookeeper
+2024-01-18 12:15:00,834 INFO AutoHealerAndLoadBalancing.LeaderElection [main] My Node under Election is/election/c_0000000066
+2024-01-18 12:15:00,839 INFO AutoHealerAndLoadBalancing.LeaderElection [main] I am LEADER
+2024-01-18 12:15:00,842 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main] The cluster addresses are: []
+2024-01-18 12:15:00,847 INFO AutoHealerAndLoadBalancing.NodeSorting [main] physical nodes are : []
+2024-01-18 12:15:23,106 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.11]
+2024-01-18 12:15:23,110 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000042]
+2024-01-18 12:15:23,118 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.11
+2024-01-18 12:15:23,138 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.11
+2024-01-18 12:15:23,146 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.11
+2024-01-18 12:15:23,155 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.11
+2024-01-18 12:15:23,168 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.11
+2024-01-18 12:15:25,784 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.11]
+2024-01-18 12:15:25,808 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000042]
+2024-01-18 12:15:25,814 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.11
+2024-01-18 12:15:25,825 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.11
+2024-01-18 12:15:25,839 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.11
+2024-01-18 12:15:25,852 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.11]
+2024-01-18 12:15:25,910 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000042]
+2024-01-18 12:15:25,916 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.11
+2024-01-18 12:15:25,960 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.11]
+2024-01-18 12:15:26,011 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000042]
+2024-01-18 12:15:27,159 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.11]
+2024-01-18 12:15:27,217 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000042]
+2024-01-18 12:15:27,231 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.11]
+2024-01-18 12:15:27,274 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000042]
+2024-01-18 12:15:27,282 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.11]
+2024-01-18 12:15:27,321 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000042]
+2024-01-18 12:15:27,336 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.11]
+2024-01-18 12:15:27,364 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000042]
+2024-01-18 12:15:42,606 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:15:42,637 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000042]
+2024-01-18 12:15:49,005 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:15:49,019 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000042]
+2024-01-18 12:15:49,022 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:15:49,029 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.11
+2024-01-18 12:15:49,035 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:15:49,837 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:15:49,865 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000042]
+2024-01-18 12:15:49,868 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:15:49,876 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.11
+2024-01-18 12:15:50,892 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:15:50,940 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000042]
+2024-01-18 12:15:50,945 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:15:51,015 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:15:51,059 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000042]
+2024-01-18 12:15:51,070 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:15:51,099 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.11
+2024-01-18 12:15:51,111 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:15:51,446 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:15:51,477 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000042]
+2024-01-18 12:15:51,481 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:15:52,087 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:15:52,159 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000042]
+2024-01-18 12:15:52,750 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:15:52,803 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000042]
+2024-01-18 12:15:52,819 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:15:52,864 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000042]
+2024-01-18 12:15:53,085 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:15:53,134 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000042]
+2024-01-18 12:15:53,147 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:15:53,179 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000042]
+2024-01-18 12:15:53,189 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:15:53,222 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000042]
+2024-01-18 12:15:53,228 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:15:53,261 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000042]
+2024-01-18 12:15:53,274 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:15:53,308 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000042]
+2024-01-18 12:15:53,491 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:15:53,528 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000042]
+2024-01-18 12:15:53,541 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:15:53,566 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000042]
+2024-01-18 12:16:09,004 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10]
+2024-01-18 12:16:09,020 ERROR org.apache.zookeeper.ClientCnxn [main-EventThread] Error while calling watcher.
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1013)
+	at java.base/java.util.ArrayList$Itr.next(ArrayList.java:967)
+	at AutoHealerAndLoadBalancing.ServiceRegistry.launchWorkersIfNecessary(ServiceRegistry.java:124)
+	at AutoHealerAndLoadBalancing.ServiceRegistry.masterJob(ServiceRegistry.java:93)
+	at AutoHealerAndLoadBalancing.ServiceRegistry.process(ServiceRegistry.java:208)
+	at org.apache.zookeeper.ClientCnxn$EventThread.processEvent(ClientCnxn.java:563)
+	at org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:538)
+2024-01-18 12:16:15,003 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10]
+2024-01-18 12:16:15,010 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043]
+2024-01-18 12:16:15,013 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:16:15,019 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:16:15,024 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:16:15,030 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:16:15,908 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10]
+2024-01-18 12:16:15,929 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043]
+2024-01-18 12:16:15,936 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:16:15,943 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:16:15,956 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:16:15,967 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10]
+2024-01-18 12:16:16,011 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043]
+2024-01-18 12:16:16,014 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:16:16,120 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10]
+2024-01-18 12:16:16,145 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043]
+2024-01-18 12:16:17,006 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10]
+2024-01-18 12:16:17,050 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043]
+2024-01-18 12:16:17,053 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:16:17,177 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10]
+2024-01-18 12:16:17,219 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043]
+2024-01-18 12:16:17,223 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10]
+2024-01-18 12:16:17,268 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043]
+2024-01-18 12:16:17,281 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10]
+2024-01-18 12:16:17,308 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043]
+2024-01-18 12:16:17,315 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10]
+2024-01-18 12:16:17,338 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043]
+2024-01-18 12:16:18,040 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10]
+2024-01-18 12:16:18,066 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043]
+2024-01-18 12:16:18,073 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10]
+2024-01-18 12:16:18,093 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043]
+2024-01-18 12:16:39,003 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10]
+2024-01-18 12:16:39,017 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043]
+2024-01-18 12:16:39,019 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:16:39,025 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:16:39,031 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:16:39,726 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10]
+2024-01-18 12:16:39,742 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043]
+2024-01-18 12:16:39,744 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:16:39,750 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:16:39,877 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10]
+2024-01-18 12:16:39,897 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043]
+2024-01-18 12:16:39,899 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:16:39,961 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10]
+2024-01-18 12:16:39,995 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043]
+2024-01-18 12:16:40,372 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:16:40,400 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000044]
+2024-01-18 12:16:40,734 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:16:40,762 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000044]
+2024-01-18 12:16:40,774 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:16:40,796 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000044]
+2024-01-18 12:16:40,804 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:16:40,827 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000044]
+2024-01-18 12:16:40,834 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:16:40,853 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000044]
+2024-01-18 12:16:41,007 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:16:41,029 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000044]
+2024-01-18 12:16:41,031 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.11
+2024-01-18 12:16:41,964 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:16:41,993 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000044]
+2024-01-18 12:16:43,004 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:16:43,021 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000044]
+2024-01-18 12:16:43,024 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.11
+2024-01-18 12:16:43,643 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11]
+2024-01-18 12:16:43,665 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000044]
+2024-01-18 12:16:48,404 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10, 192.168.184.11, 192.168.184.10]
+2024-01-18 12:16:48,430 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000043, physical_node_0000000044, physical_node_0000000045]
+2024-01-18 12:16:49,006 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.11, 192.168.184.10]
+2024-01-18 12:16:49,012 ERROR org.apache.zookeeper.ClientCnxn [main-EventThread] Error while calling watcher.
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1013)
+	at java.base/java.util.ArrayList$Itr.next(ArrayList.java:967)
+	at AutoHealerAndLoadBalancing.ServiceRegistry.launchWorkersIfNecessary(ServiceRegistry.java:124)
+	at AutoHealerAndLoadBalancing.ServiceRegistry.masterJob(ServiceRegistry.java:93)
+	at AutoHealerAndLoadBalancing.ServiceRegistry.process(ServiceRegistry.java:208)
+	at org.apache.zookeeper.ClientCnxn$EventThread.processEvent(ClientCnxn.java:563)
+	at org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:538)
+2024-01-18 12:17:03,008 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.11, 192.168.184.10]
+2024-01-18 12:17:03,031 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000044, physical_node_0000000045]
+2024-01-18 12:17:03,034 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:17:03,041 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.11
+2024-01-18 12:17:03,717 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.11, 192.168.184.10]
+2024-01-18 12:17:03,734 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000044, physical_node_0000000045]
+2024-01-18 12:17:03,736 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:17:04,059 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.11, 192.168.184.10]
+2024-01-18 12:17:04,079 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000044, physical_node_0000000045]
+2024-01-18 12:17:04,344 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.11, 192.168.184.10]
+2024-01-18 12:17:04,376 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000044, physical_node_0000000045]
+2024-01-18 12:17:04,386 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.11, 192.168.184.10]
+2024-01-18 12:17:04,413 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000044, physical_node_0000000045]
+2024-01-18 12:17:05,006 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.11, 192.168.184.10]
+2024-01-18 12:17:05,024 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000044, physical_node_0000000045]
+2024-01-18 12:17:05,027 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:17:05,033 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.11
+2024-01-18 12:17:05,688 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.11, 192.168.184.10]
+2024-01-18 12:17:05,707 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000044, physical_node_0000000045]
+2024-01-18 12:17:05,710 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.11
+2024-01-18 12:17:05,746 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.11, 192.168.184.10]
+2024-01-18 12:17:05,771 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000044, physical_node_0000000045]
+2024-01-18 12:17:06,321 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.11, 192.168.184.10]
+2024-01-18 12:17:06,352 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000044, physical_node_0000000045]
+2024-01-18 12:17:06,362 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.11, 192.168.184.10]
+2024-01-18 12:17:06,387 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000044, physical_node_0000000045]
+2024-01-18 12:17:07,007 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.11, 192.168.184.10]
+2024-01-18 12:17:07,030 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000044, physical_node_0000000045]
+2024-01-18 12:17:07,033 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:17:07,625 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.11, 192.168.184.10]
+2024-01-18 12:17:07,646 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000044, physical_node_0000000045]
+2024-01-18 12:17:27,004 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10]
+2024-01-18 12:17:27,010 ERROR org.apache.zookeeper.ClientCnxn [main-EventThread] Error while calling watcher.
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1013)
+	at java.base/java.util.ArrayList$Itr.next(ArrayList.java:967)
+	at AutoHealerAndLoadBalancing.ServiceRegistry.launchWorkersIfNecessary(ServiceRegistry.java:124)
+	at AutoHealerAndLoadBalancing.ServiceRegistry.masterJob(ServiceRegistry.java:93)
+	at AutoHealerAndLoadBalancing.ServiceRegistry.process(ServiceRegistry.java:208)
+	at org.apache.zookeeper.ClientCnxn$EventThread.processEvent(ClientCnxn.java:563)
+	at org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:538)
+2024-01-18 12:17:27,015 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10]
+2024-01-18 12:17:27,020 ERROR org.apache.zookeeper.ClientCnxn [main-EventThread] Error while calling watcher.
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1013)
+	at java.base/java.util.ArrayList$Itr.next(ArrayList.java:967)
+	at AutoHealerAndLoadBalancing.ServiceRegistry.launchWorkersIfNecessary(ServiceRegistry.java:124)
+	at AutoHealerAndLoadBalancing.ServiceRegistry.masterJob(ServiceRegistry.java:93)
+	at AutoHealerAndLoadBalancing.ServiceRegistry.process(ServiceRegistry.java:208)
+	at org.apache.zookeeper.ClientCnxn$EventThread.processEvent(ClientCnxn.java:563)
+	at org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:538)
+2024-01-18 12:17:29,004 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10]
+2024-01-18 12:17:29,010 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000045]
+2024-01-18 12:17:29,013 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:17:29,019 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:17:29,025 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:17:29,032 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:17:29,978 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10]
+2024-01-18 12:17:29,987 ERROR org.apache.zookeeper.ClientCnxn [main-EventThread] Error while calling watcher.
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1013)
+	at java.base/java.util.ArrayList$Itr.next(ArrayList.java:967)
+	at AutoHealerAndLoadBalancing.ServiceRegistry.launchWorkersIfNecessary(ServiceRegistry.java:124)
+	at AutoHealerAndLoadBalancing.ServiceRegistry.masterJob(ServiceRegistry.java:93)
+	at AutoHealerAndLoadBalancing.ServiceRegistry.process(ServiceRegistry.java:208)
+	at org.apache.zookeeper.ClientCnxn$EventThread.processEvent(ClientCnxn.java:563)
+	at org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:538)
+2024-01-18 12:17:29,992 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10]
+2024-01-18 12:17:29,997 ERROR org.apache.zookeeper.ClientCnxn [main-EventThread] Error while calling watcher.
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1013)
+	at java.base/java.util.ArrayList$Itr.next(ArrayList.java:967)
+	at AutoHealerAndLoadBalancing.ServiceRegistry.launchWorkersIfNecessary(ServiceRegistry.java:124)
+	at AutoHealerAndLoadBalancing.ServiceRegistry.masterJob(ServiceRegistry.java:93)
+	at AutoHealerAndLoadBalancing.ServiceRegistry.process(ServiceRegistry.java:208)
+	at org.apache.zookeeper.ClientCnxn$EventThread.processEvent(ClientCnxn.java:563)
+	at org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:538)
+2024-01-18 12:17:30,007 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10]
+2024-01-18 12:17:30,016 ERROR org.apache.zookeeper.ClientCnxn [main-EventThread] Error while calling watcher.
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1013)
+	at java.base/java.util.ArrayList$Itr.next(ArrayList.java:967)
+	at AutoHealerAndLoadBalancing.ServiceRegistry.launchWorkersIfNecessary(ServiceRegistry.java:124)
+	at AutoHealerAndLoadBalancing.ServiceRegistry.masterJob(ServiceRegistry.java:93)
+	at AutoHealerAndLoadBalancing.ServiceRegistry.process(ServiceRegistry.java:208)
+	at org.apache.zookeeper.ClientCnxn$EventThread.processEvent(ClientCnxn.java:563)
+	at org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:538)
+2024-01-18 12:17:31,003 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10]
+2024-01-18 12:17:31,029 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000045]
+2024-01-18 12:17:31,031 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] Sending To : 192.168.184.10
+2024-01-18 12:17:31,649 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: [192.168.184.10]
+2024-01-18 12:17:31,674 INFO AutoHealerAndLoadBalancing.NodeSorting [main-EventThread] physical nodes are : [physical_node_0000000045]
+2024-01-18 12:17:33,001 INFO AutoHealerAndLoadBalancing.ServiceRegistry [main-EventThread] The cluster addresses are: []
+2024-01-18 12:17:33,006 ERROR org.apache.zookeeper.ClientCnxn [main-EventThread] Error while calling watcher.
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1013)
+	at java.base/java.util.ArrayList$Itr.next(ArrayList.java:967)
+	at AutoHealerAndLoadBalancing.ServiceRegistry.launchWorkersIfNecessary(ServiceRegistry.java:124)
+	at AutoHealerAndLoadBalancing.ServiceRegistry.masterJob(ServiceRegistry.java:93)
+	at AutoHealerAndLoadBalancing.ServiceRegistry.process(ServiceRegistry.java:208)
+	at org.apache.zookeeper.ClientCnxn$EventThread.processEvent(ClientCnxn.java:563)
+	at org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:538)
